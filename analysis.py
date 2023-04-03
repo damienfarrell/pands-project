@@ -14,62 +14,40 @@ df = pd.read_csv(file_name,
                  header=None,
                  names=column_headers)
 
-# Statistics
+# Calculate summary statistics and save to a text file
 summary_data = df.describe()
-
-# Saves the statistics as txt.
-
 summary_data.to_csv('summary_data.txt')
 
-# Plots.
-# Plots Formatting.
-
-# Formatting: Text Size
+# Set text size for plot titles and axes
 title_fontsize = 15
 axis_fontsize = 12
 
-# Formatting: Labels etc.
-plt.grid(True)
-plt.xlabel('Value',fontsize=axis_fontsize)
-plt.ylabel('Frequency',fontsize=axis_fontsize)
+# Generate histograms for each numeric variable and save as PNG files
+for column in column_headers[:-1]: # Loop through all column headers except 'class'
+    plt.figure() # Create a new figure for each histogram
+    plt.grid(True)
+    plt.xlabel('Value', fontsize=axis_fontsize)
+    plt.ylabel('Frequency', fontsize=axis_fontsize)
+    plt.title(f'Histogram: {column}', fontsize=title_fontsize)
+    df[column].plot(kind='hist', color='green')
+    plt.savefig(f'histogram_{column}.png', dpi=300, bbox_inches='tight')
 
-# Plotting: Histograms
-# Saves a histogram of each variable to png files. Looped through the headers except 'class' to output the png.
-column_number = 0
-for histogram in range(len(column_headers)-1):
-# Plot data per variable.
-    plt.title(f'Histogram: {column_headers[column_number]}',fontsize=title_fontsize)
-    df[column_headers[column_number]].plot(kind='hist', color='green')
- # Save Output.
-    plt.savefig(f'histogram_{column_headers[column_number]}.png', dpi=300, bbox_inches='tight')
-    column_number += 1
+# Generate scatterplots for all combinations of numeric variables
+scatterplot_axes = list(itertools.combinations(column_headers[:-1], 2))
 
-# Plotting: Scatterplots
-
-A = [0, 1, 2, 3]
-B = [0, 1, 2, 3]
-scatterplot_axis = list(itertools.product(A, B))
-
-print(scatterplot_axis)
-
-tuple_num = 0
-for scatterplot in range(len(scatterplot_axis)):
-    xpoints, ypoints = scatterplot_axis[tuple_num]
-    plt.title(f'Scatterplot: {xpoints} vs {ypoints}',fontsize=title_fontsize)
-    df.plot(kind='scatter', x=xpoints, y=ypoints)
-    tuple_num += 1
-    plt.show()
-
-
-plt.savefig(f'scatterplot_{xpoints} vs {ypoints}.png', dpi=300, bbox_inches='tight')
-
-
-
-
+for x, y in scatterplot_axes: # Unpack the x and y variables from each tuple
+    plt.figure() # Create a new figure for each scatterplot
+    plt.grid(True)
+    plt.xlabel(x, fontsize=axis_fontsize)
+    plt.ylabel(y, fontsize=axis_fontsize)
+    plt.title(f'Scatterplot: {x} vs {y}', fontsize=title_fontsize)
+    df.plot(kind='scatter', x=x, y=y)
+    plt.savefig(f'scatterplot_{x}_vs_{y}.png', dpi=300, bbox_inches='tight')
 
 
 
 # [A Gentle Introduction to Pandas Data Analysis](https://www.youtube.com/watch?v=_Eb0utIRdkw)
 # [How To Add Header Row To A Pandas DataFrame](https://stackoverflow.com/questions/34091877/how-to-add-header-row-to-a-pandas-dataframe)
 # [W3Schools Pandas Tutorial](https://www.w3schools.com/python/pandas/pandas_analyzing.asp)
-# [Feeding All Combinations Of 'X' And 'Y' Array Into A Function](https://stackoverflow.com/questions/40685659/feeding-all-combinations-of-x-and-y-array-into-function-fx-y)
+# [How Do I Iterate Through Combinations Of A List](https://stackoverflow.com/questions/41680388/how-do-i-iterate-through-combinations-of-a-list)
+# [Exploratory Data Analysis with Pandas Python 2023](https://www.youtube.com/watch?v=xi0vhXFPegw&t=2s)
