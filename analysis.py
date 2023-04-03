@@ -7,8 +7,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import itertools
 
+plt.style.use('ggplot')
+
 file_name = 'iris.data'
-column_headers = ['sepal_length','sepal_width','petal_length','petal_width','class']
+column_headers = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
 
 df = pd.read_csv(file_name, 
                  header=None,
@@ -18,31 +20,22 @@ df = pd.read_csv(file_name,
 summary_data = df.describe()
 summary_data.to_csv('summary_data.txt')
 
-# Set text size for plot titles and axes
-title_fontsize = 15
-axis_fontsize = 12
-
 # Generate histograms for each numeric variable and save as PNG files
 for column in column_headers[:-1]: # Loop through all column headers except 'class'
-    plt.figure() # Create a new figure for each histogram
-    plt.grid(True)
-    plt.xlabel('Value', fontsize=axis_fontsize)
-    plt.ylabel('Frequency', fontsize=axis_fontsize)
-    plt.title(f'Histogram: {column}', fontsize=title_fontsize)
-    df[column].plot(kind='hist', color='green')
-    plt.savefig(f'histogram_{column}.png', dpi=300, bbox_inches='tight')
+    plt.figure() # Create a new figure for each histogram (Not needed for scatterplot)
+    ax = df[column].plot(kind='hist', title=f'Histogram: {column}')
+    ax.set_xlabel('Value')
+    ax.set_ylabel('Frequency')
+    plt.savefig(f'histogram_{column}.png')
 
 # Generate scatterplots for all combinations of numeric variables
 scatterplot_axes = list(itertools.combinations(column_headers[:-1], 2))
 
-for x, y in scatterplot_axes: # Unpack the x and y variables from each tuple
-    plt.figure() # Create a new figure for each scatterplot
-    plt.grid(True)
-    plt.xlabel(x, fontsize=axis_fontsize)
-    plt.ylabel(y, fontsize=axis_fontsize)
-    plt.title(f'Scatterplot: {x} vs {y}', fontsize=title_fontsize)
-    df.plot(kind='scatter', x=x, y=y)
-    plt.savefig(f'scatterplot_{x}_vs_{y}.png', dpi=300, bbox_inches='tight')
+for x, y in scatterplot_axes: # Unpacks and loops the x and y variables from each tuple
+    ax = df.plot(kind='scatter', x=x, y=y, title=f'Scatterplot: {x} vs {y}')
+    ax.set_xlabel(x)
+    ax.set_ylabel(y)
+    plt.savefig(f'scatterplot_{x}_vs_{y}.png')
 
 
 
