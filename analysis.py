@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import itertools
 import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
 
 plt.style.use('ggplot') # Uses style template
 
@@ -16,6 +17,11 @@ column_headers = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Cla
 df = pd.read_csv(file_name, 
                  header=None,
                  names=column_headers) # Inserts column headers
+
+# Convert the class labels to numerical format
+df['Target'] = df['Class'].copy() # Make a copy of class to later encode
+le = LabelEncoder()
+df['Target'] = le.fit_transform(df['Target'])
 
 # Calculate summary statistics and save to a text file
 summary_data = df.describe()
@@ -51,3 +57,5 @@ df_corr = df[['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width']].corr()
 sns.heatmap(df_corr, annot=True)
 plt.title('Heatmap: Correlation')
 plt.savefig(f'Heatmap_Correlation', dpi=300)
+
+print(df)
