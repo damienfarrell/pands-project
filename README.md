@@ -6,6 +6,15 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/damienfarrell/pands-project)
 
 # Narrative
+
+## Introduction
+
+The [Iris Dataset](https://archive.ics.uci.edu/ml/datasets/iris), accessible through the UCI Machine Learning Repository, is part of a vast array of databases utilised by the machine learning community to conduct evaluations of machine learning algorithms. The Iris dataset is frequently employed in pattern recognition learning. This multivariate dataset's default machine learning task is classification. It contains 150 instances with five attributes, four of which represent sepal and petal measurements for each data point, while the fifth attribute indicates the class or species of Iris plant to which each data point belongs. The dataset encompasses 50 plants from each of the three Iris plant classes, with each class representing a distinct species: Iris Setosa, Iris Versicolor, and Iris Virginica. It was originally created by R.A. Fisher in 1936 and was donated by Michael Marshall in 1988.
+
+<img src="./markdown-image-files/Iris_Versicolor.jpg" width="20%" height="20%">
+<img src="./markdown-image-files/Iris_Virginica.jpg" width="20%" height="20%">
+<img src="./markdown-image-files/Iris_Setosa.jpg" width="40%" height="40%">
+
 ## Process
 
 In this code the Iris dataset was analysed. This dataset contains measurements of sepal and petal lengths and widths for three different species of iris flowers. The script is organised as follows:
@@ -21,9 +30,9 @@ In this code the Iris dataset was analysed. This dataset contains measurements o
 9. Added a machine learning logistic regression model to the dataset. Used sklearn to split the data into a training set and a test set. Created the model with the inbuilt functions and then evaluated it on the test set data. <sup>[9](#ref9)</sup><sup>[10](#ref10)</sup>
 10. Completed a README.md of the process.<sup>[6,](#ref6)</sup><sup>[7](#ref7)</sup>
 
-## Analysis
-
-From the analysis of the dataset we can see that the following are the main statistics of the dataset:
+# Analysis
+## Main Statistics
+From the analysis of the dataset we can see that the following are some of the main statistics of the dataset:
 
 | Class<sup>[11](#ref11)</sup>           | Sepal_Length |     |     | Sepal_Width |     |     | Petal_Length |     |     | Petal_Width |     |     | Class_Int |   |   |
 |-----------------|--------------|-----|-----|-------------|-----|-----|--------------|-----|-----|-------------|-----|-----|-----------|---|---|
@@ -32,6 +41,8 @@ From the analysis of the dataset we can see that the following are the main stat
 | Iris-versicolor | 5.936        | 7.0 | 4.9 | 2.770       | 3.4 | 2.0 | 4.260        | 5.1 | 3.0 | 1.326       | 1.8 | 1.0 | 1.0       | 1 | 1 |
 | Iris-virginica  | 6.588        | 7.9 | 4.9 | 2.974       | 3.8 | 2.2 | 5.552        | 6.9 | 4.5 | 2.026       | 2.5 | 1.4 | 2.0       | 2 | 2 |  
 
+
+## Comments
 Some takeaways from the dataset are:  
  - Iris-virginica showes a greater sepal length, whereas Iris-setosa has a wider sepal width. In the case of Iris-setosa, the sepal width exceeds the sepal length.  
  - The highest frequency for petal length is situated between 1 cm and 2 cm, with a count of 50. This can be seen in the histogram.  
@@ -61,7 +72,11 @@ Some takeaways from the dataset are:
 
 <a name="ref10">10.</a>&nbsp; [Scikit Learn : Confusion Matrix, Accuracy, Precision and Recall](https://www.youtube.com/watch?v=TtIjAiSojFE)  
 
-<a name="ref10">11.</a>&nbsp; [Creating a Markdown Table](https://tablesgenerator.com/markdown_tables)  
+<a name="ref10">11.</a>&nbsp; [Creating a Markdown Table](https://tablesgenerator.com/markdown_tables) 
+
+<a name="ref10">11.</a>&nbsp; [Add Images in Markdown and Modify Image Size](https://linuxhint.com/add-images-markdown-modify-image-size/) 
+
+
 
 
 
