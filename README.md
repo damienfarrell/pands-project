@@ -36,12 +36,126 @@ In this code the Iris dataset was analysed. This dataset contains measurements o
 ## Main Statistics
 From the analysis of the dataset we can see that the following are some of the main statistics of the dataset:
 
-| Class<sup>[11](#ref11)</sup>           | Sepal_Length |     |     | Sepal_Width |     |     | Petal_Length |     |     | Petal_Width |     |     | Class_Int |   |   |
-|-----------------|--------------|-----|-----|-------------|-----|-----|--------------|-----|-----|-------------|-----|-----|-----------|---|---|
-|                 | mean         | max | min | mean        | max | min | mean         | max | min | mean        | max | min | mean      |max| min|
-| Iris-setosa     | 5.006        | 5.8 | 4.3 | 3.418       | 4.4 | 2.3 | 1.464        | 1.9 | 1.0 | 0.244       | 0.6 | 0.1 | 0.0       | 0 | 0 |
-| Iris-versicolor | 5.936        | 7.0 | 4.9 | 2.770       | 3.4 | 2.0 | 4.260        | 5.1 | 3.0 | 1.326       | 1.8 | 1.0 | 1.0       | 1 | 1 |
-| Iris-virginica  | 6.588        | 7.9 | 4.9 | 2.974       | 3.8 | 2.2 | 5.552        | 6.9 | 4.5 | 2.026       | 2.5 | 1.4 | 2.0       | 2 | 2 |  
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 12px;
+}
+
+th {
+  background-color: #2E8B57;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th rowspan="2">Class</th>
+    <th colspan="3">Sepal_Length</th>
+    <th colspan="3">Sepal_Width</th>
+    <th colspan="3">Petal_Length</th>
+    <th colspan="3">Petal_Width</th>
+    <th colspan="3">Class_Int</th>
+  </tr>
+  <tr>
+    <th>mean</th>
+    <th>max</th>
+    <th>min</th>
+    <th>mean</th>
+    <th>max</th>
+    <th>min</th>
+    <th>mean</th>
+    <th>max</th>
+    <th>min</th>
+    <th>mean</th>
+    <th>max</th>
+    <th>min</th>
+    <th>mean</th>
+    <th>max</th>
+    <th>min</th>
+  </tr>
+  <tr>
+    <td>Iris-setosa</td>
+    <td>5.006</td>
+    <td>5.8</td>
+    <td>4.3</td>
+    <td>3.418</td>
+    <td>4.4</td>
+    <td>2.3</td>
+    <td>1.464</td>
+    <td>1.9</td>
+    <td>1.0</td>
+    <td>0.244</td>
+    <td>0.6</td>
+    <td>0.1</td>
+    <td>0.0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Iris-versicolor</td>
+    <td>5.936</td>
+    <td>7.0</td>
+    <td>4.9</td>
+    <td>2.770</td>
+    <td>3.4</td>
+    <td>2.0</td>
+    <td>4.260</td>
+    <td>5.1</td>
+    <td>3.0</td>
+    <td>1.326</td>
+    <td>1.8</td>
+    <td>1.0</td>
+    <td>1.0</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Iris-virginica</td>
+    <td>6.588</td>
+    <td>7.9</td>
+    <td>4.9</td>
+    <td>2.974</td>
+    <td>3.8</td>
+    <td>2.2</td>
+    <td>5.552</td>
+    <td>6.9</td>
+    <td>4.5</td>
+    <td>2.026</td>
+    <td>2.5</td>
+    <td>1.4</td>
+    <td>2.0</td>
+    <td>2</td>
+    <td>2</td>
+  </tr>
+</table>
+
+</body>
+</html>
 
 
 ## Comments
@@ -76,7 +190,7 @@ Some takeaways from the dataset are:
 
 <a name="ref10">11.</a>&nbsp; [Creating a Markdown Table](https://tablesgenerator.com/markdown_tables) 
 
-<a name="ref10">11.</a>&nbsp; [Add Images in Markdown and Modify Image Size](https://linuxhint.com/add-images-markdown-modify-image-size/) 
+<a name="ref10">12.</a>&nbsp; [Add Images in Markdown and Modify Image Size](https://linuxhint.com/add-images-markdown-modify-image-size/) 
 
 
 
