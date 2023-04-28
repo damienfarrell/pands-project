@@ -11,9 +11,11 @@
 
 The [Iris Dataset](https://archive.ics.uci.edu/ml/datasets/iris), accessible through the UCI Machine Learning Repository, is part of a vast array of databases utilised by the machine learning community to conduct evaluations of machine learning algorithms. The Iris dataset is frequently employed in pattern recognition learning. This multivariate dataset's default machine learning task is classification. It contains 150 instances with five attributes, four of which represent sepal and petal measurements for each data point, while the fifth attribute indicates the class or species of Iris plant to which each data point belongs. The dataset encompasses 50 plants from each of the three Iris plant classes, with each class representing a distinct species: Iris Setosa, Iris Versicolor, and Iris Virginica. It was originally created by R.A. Fisher in 1936 and was donated by Michael Marshall in 1988.
 
-<img src="./markdown-image-files/Iris_Versicolor.jpg" width="20%" height="20%">
-<img src="./markdown-image-files/Iris_Virginica.jpg" width="20%" height="20%">
-<img src="./markdown-image-files/Iris_Setosa.jpg" width="40%" height="40%">
+<p float="left">
+    <img src="./markdown-image-files/Iris_Versicolor.jpg" width="20%" height="20%">
+    <img src="./markdown-image-files/Iris_Virginica.jpg" width="20%" height="20%">
+    <img src="./markdown-image-files/Iris_Setosa.jpg" width="40%" height="40%">
+</p>
 
 ## Process
 

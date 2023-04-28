@@ -17,6 +17,7 @@ plt.style.use('ggplot') # Uses style template
 folder_path = 'plot-image-files/'
 url_name = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 column_headers = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class'] # Column headers to add
+
 df = pd.read_csv(url_name, 
                  header=None,
                  names=column_headers) # Inserts column headers
@@ -40,7 +41,7 @@ for column in df.columns[:-2]: # Loop through all column headers except 'Class' 
     ax = df[column].plot(kind='hist', title=f'Histogram: {column}')
     ax.set_xlabel('Value')
     ax.set_ylabel('Frequency')
-    plt.savefig(f'{folder_path}Histogram_{column}.png', dpi=250) # Saves file.
+    plt.savefig(f'{folder_path}Histogram_{column}.png', dpi=150) # Saves file.
 
 # Generate scatterplots for all combinations of numeric variables
 scatterplot_axes = list(itertools.combinations(df.columns[:-1], 2))
@@ -52,19 +53,19 @@ for x, y in scatterplot_axes: # Unpacks and loops the x and y variables from eac
                 hue='Class',
                 data=df,)
     plt.title(f'Scatterplot: {x} vs {y}')
-    plt.savefig(f'{folder_path}Scatterplot_{x}_vs_{y}.png', dpi=250) # Saves file.
+    plt.savefig(f'{folder_path}Scatterplot_{x}_vs_{y}.png', dpi=150) # Saves file.
 
 sns.pairplot(df, 
              vars=df.columns[:-1],
              hue='Class')
-plt.savefig(f'{folder_path}Pairplot.png', dpi=250) # Saves file.
+plt.savefig(f'{folder_path}Pairplot.png', dpi=150) # Saves file.
 
 plt.figure() # Creates new figure for correlation heatmap
 df_corr = df[['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class_Int']].corr()
 sns.heatmap(df_corr, annot=True)
 plt.title('Heatmap: Correlation')
 plt.tight_layout() # Adjust the layout of the figure
-plt.savefig(f'{folder_path}Heatmap_Correlation.png', dpi=250)
+plt.savefig(f'{folder_path}Heatmap_Correlation.png', dpi=150)
 
 # Model:
 # Separate features and labels
