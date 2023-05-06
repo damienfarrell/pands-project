@@ -23,9 +23,9 @@ df = pd.read_csv(url_name,
                  names=column_headers) # Inserts column headers
 
 # Convert the class labels to numerical format
-df['Class_Int'] = df['Class'].copy() # Make a copy of the class coolumn to later encode
+df['Class_Int'] = df['Class'].copy() # Make a copy of the class column to later encode
 le = LabelEncoder()
-df['Class_Int'] = le.fit_transform(df['Class'])
+df['Class_Int'] = le.fit_transform(df['Class']) # Encodes
 df = df[['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class_Int','Class']] # Rearrange columns.
 
 # Calculate summary statistics and save to a text file

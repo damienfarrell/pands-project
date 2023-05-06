@@ -29,49 +29,15 @@ In this code the Iris dataset was analysed. This dataset contains measurements o
 6. Create scatterplots: Scatterplots are created for all combinations of numeric variables, with different colors representing the different iris species due to the Seaborn 'hue' parameter. Using the itertools.combination method a loop through the tuples generated produced a scatterplot for every possible combination. Each scatterplot is saved as a PNG file.<sup>[3,](#ref3)</sup><sup>[4,](#ref4)</sup><sup>[5](#ref5)</sup>
 7. Created pairplot: A pairplot is generated using seaborn, which provides a compact visualization of all possible scatterplots between numeric variables, as well as histograms for each variable. The pairplot is saved as a PNG file.<sup>[3,](#ref3)</sup><sup>[4,](#ref4)</sup><sup>[5](#ref5)</sup>
 8. Created correlation heatmap: A correlation heatmap is created to visualise the correlation between the numeric variables. The heatmap is saved as a PNG file. <sup>[5](#ref5)</sup>
-9. Added a machine learning logistic regression model to the dataset. Used sklearn to split the data into a training set and a test set. Created the model with the inbuilt functions and then evaluated it on the test set data. <sup>[9](#ref9)</sup><sup>[10](#ref10)</sup>
+9. Added a machine learning logistic regression model to the dataset. Used sklearn to split the data into a training set and a test set. Created the model with the inbuilt functions and then evaluated it on the test set data. <sup>[9,](#ref9)</sup><sup>[10](#ref10)</sup>
 10. Completed a README.md of the process.<sup>[6,](#ref6)</sup><sup>[7](#ref7)</sup>
 
 # Analysis
 ## Main Statistics
 From the analysis of the dataset we can see that the following are some of the main statistics of the dataset:
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  margin: 20px auto;
-}
-
-table, th, td {
-  border: 1px solid #ddd;
-  text-align: center;
-  padding: 12px;
-}
-
-th {
-  background-color: #2E8B57;
-  color: white;
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-tr:hover {
-  background-color: #ddd;
-}
-
-</style>
 </head>
 <body>
-
 <table>
   <tr>
     <th rowspan="2">Class</th>
@@ -157,13 +123,16 @@ tr:hover {
 </body>
 </html>
 
+<p float="left">
+    <img src="./plot-image-files/Pairplot.png" width="50%" height="50%">
+</p>
 
 ## Comments
 Some takeaways from the dataset are:  
  - Iris-virginica showes a greater sepal length, whereas Iris-setosa has a wider sepal width. In the case of Iris-setosa, the sepal width exceeds the sepal length.  
  - The highest frequency for petal length is situated between 1 cm and 2 cm, with a count of 50. This can be seen in the histogram.  
- - The petal length and petal width are highly correlated to each other throughout each iris class with a score of 0.96. This can be seen in the heatmap.  
- - The model has printed a high accuracy of 0.97, which means it made correct predictions 97% of the time.  
+ - The petal length and petal width are highly correlated to each other throughout each iris class with a score of 0.96. This can be seen in the heatmap and pairplot.  
+ - The model has printed a high accuracy of approximately 0.97, which means it made correct predictions 97% of the time.  
 
 ---
 
